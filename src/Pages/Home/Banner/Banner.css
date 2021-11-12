@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+.banner-container{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 50px;
+}
+.banner-container img{
+    max-width: 80%;
+    margin-top: 40px;
+    margin-left: 80px;
+}
+.banner-descrition{
+    margin-top: 20%;
+}
+.banner-descrition h1{color:rgb(218, 210, 218);}
+.banner-descrition h4{
+    font-style: italic;
+    color:rgb(133, 126, 133);
+}
+.banner-descrition h1{
+    font-size: 3.5em;
+    font-family: 'Noto Serif', serif;
+}
