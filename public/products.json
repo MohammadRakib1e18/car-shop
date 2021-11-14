@@ -1,0 +1,72 @@
+[
+    {
+        "index": 1,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_01.jpg",
+        "name": "MINADO SUSHI RICE",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means."
+    },
+    {
+        "index": 2,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_02.jpg",
+        "name": "KAPPA MAKI",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 3,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_03.jpg",
+        "name": "TAMAGO YAKI",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 4,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_04.jpg",
+        "name": "CRUNCHY SHRIMP ROLL",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 5,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_05.jpg",
+        "name": "KAPPA MAKI",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 6,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_06.jpg",
+        "name": "CRUNCHY SHRIMP",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 7,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_10.jpg",
+        "name": "Double Cheeseburger",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 8,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_08.jpg",
+        "name": "Crispy Chicken Sandwich",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 9,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_09.jpg",
+        "name": "Original Hamburger",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    },
+    {
+        "index": 10,
+        "picture": "https://html.merku.love/rotors/assets/images/feature/img_13.jpg",
+        "name": "Original Hamburger",
+        "price": 20000,
+        "about": "Here we take care of every patients. This is our moral duty to do that. We want to give proper treamnent by any means.\r\n"
+    }
+]
