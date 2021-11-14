@@ -1,9 +1,10 @@
-import React from 'react';
-import './SingleProduct.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SingleProduct.css";
 
 const Product = (props) => {
     // destructuring
-    const {picture, about, price, name} = props.product;
+    const { index, picture, about, price, name } = props.product;
 
     return (
         <div className="product">
@@ -13,9 +14,13 @@ const Product = (props) => {
                 <h5>Price: {price}</h5>
                 <p>{about}</p>
 
-                {/* <Link to={`/booking/${_id}`}>
-                    <button className="btn btn-warning">Order Now</button>
-                </Link> */}
+                <Link style={{textDecoration:"none"}} to={`/booking/${index}`}>
+                    <div className="d-grid gap-2 col-6 mx-auto">
+                        <button className="btn btn-warning text-decoration-none" type="button">
+                            Purchase Now
+                        </button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
