@@ -7,10 +7,10 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, NavLink } from "react-router-dom";
-// import useAuth from "./../../../hooks/useAuth";
+import useAuth from "./../../../hooks/useAuth";
 
 const Navigation = () => {
-    // const { user, logout } = useAuth();
+    const { user, logout } = useAuth();
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -34,7 +34,7 @@ const Navigation = () => {
                     <Link
                         style={{
                             textDecoration: "none",
-                            color:'yellowgreen',
+                            color: "yellowgreen",
                         }}
                         to="/home"
                     >
@@ -43,16 +43,27 @@ const Navigation = () => {
                     <Link
                         style={{
                             textDecoration: "none",
-                            color:'yellowgreen',
+                            color: "yellowgreen",
                         }}
                         to="/products"
                     >
                         <Button color="inherit">Our Cars</Button>
                     </Link>
-                    {/* {user?.email ? (
-                        <Button onClick={logout} color="inherit">
-                            Logout
-                        </Button>
+                    {user?.email ? (
+                        <Box>
+                            <NavLink
+                                style={{
+                                    textDecoration: "none",
+                                    color: "white",
+                                }}
+                                to="/dashboard"
+                            >
+                                <Button color="inherit">Dashboard</Button>
+                            </NavLink>
+                            <Button onClick={logout} color="inherit">
+                                Logout
+                            </Button>
+                        </Box>
                     ) : (
                         <NavLink
                             style={{ textDecoration: "none", color: "white" }}
@@ -60,7 +71,7 @@ const Navigation = () => {
                         >
                             <Button color="inherit">Login</Button>
                         </NavLink>
-                    )} */}
+                    )}
                 </Toolbar>
             </AppBar>
         </Box>

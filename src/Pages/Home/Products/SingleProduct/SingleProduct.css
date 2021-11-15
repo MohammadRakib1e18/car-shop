@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+  }
 .product {
     border: 1px solid rgb(110, 107, 107);
     margin: 10px;
