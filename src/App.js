@@ -5,6 +5,9 @@ import OurCars from "./Pages/OurCars/OurCars/OurCars";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Purchase from "./Pages/Purchase/Purchase";
 
 function App() {
     return (
@@ -27,6 +30,12 @@ function App() {
                     <Route path="/register">
                         <Register />
                     </Route>
+                    <PrivateRoute path="/dashboard">
+                        <Dashboard />
+                    </PrivateRoute>
+                    <PrivateRoute path="/purchase">
+                        <Purchase />
+                    </PrivateRoute>
                 </Switch>
             </Router>
           </AuthProvider>

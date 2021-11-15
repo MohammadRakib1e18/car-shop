@@ -47,11 +47,11 @@ const Navigation = () => {
                         }}
                         to="/products"
                     >
-                        <Button color="inherit">Our Cars</Button>
+                        <Button color="inherit">Explore Cars</Button>
                     </Link>
                     {user?.email ? (
                         <Box>
-                            {/* <NavLink
+                            <NavLink
                                 style={{
                                     textDecoration: "none",
                                     color: "white",
@@ -59,7 +59,7 @@ const Navigation = () => {
                                 to="/dashboard"
                             >
                                 <Button color="inherit">Dashboard</Button>
-                            </NavLink> */}
+                            </NavLink>
                             <Button onClick={logout} color="inherit">
                                 Logout
                             </Button>
