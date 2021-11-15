@@ -11,18 +11,30 @@ import useAuth from "./../../../hooks/useAuth";
 
 const Navigation = () => {
     const { user, logout } = useAuth();
+    console.log(user);
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
-                        size="large"
+                        size="small"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{ mr: 2 }}
                     >
-                        <MenuIcon />
+                        {<MenuIcon />}
+                        {
+                            user?.email?
+                            <Typography style={{marginLeft:'5px'}}>
+                                <span style={{ color: "PeachPuff" }}>
+                                    Welcome,{" "}
+                                </span>{" "}
+                                <span style={{ color: "DarkOrange" }}>
+                                    {user.displayName}
+                                </span>
+                            </Typography>
+                            :<Typography/>
+                        }
                     </IconButton>
                     <Typography
                         variant="h4"

@@ -49,14 +49,14 @@ const Register = () => {
                         </Typography>
                         {!isLoading && (
                             <form onSubmit={handleLoginSubmit}>
-                                {/* <TextField
+                                <TextField
                                 sx={{ width: "75%", m: 1 }}
                                 id="standard-basic"
                                 label="Your Name"
                                 name="name"
                                 onBlur={handleOnBlur}
                                 variant="standard"
-                            /> */}
+                            />
                                 <TextField
                                     sx={{ width: "75%", m: 1 }}
                                     id="standard-basic"
