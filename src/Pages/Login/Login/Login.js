@@ -14,8 +14,7 @@ import Navigation from "../../Shared/Navigation/Navigation";
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, signInWithGoogle, loginUser, isLoading, authError } =
-        useAuth();
+    const { user, loginUser, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -32,9 +31,6 @@ const Login = () => {
         e.preventDefault();
     };
 
-    const handleGoogleSignIn = () => {
-        signInWithGoogle(location, history);
-    };
     return (
         <>
             <Navigation></Navigation>
@@ -92,13 +88,6 @@ const Login = () => {
                                 <Alert severity="error">{authError}</Alert>
                             )}
                         </form>
-                        <p>----------------------------</p>
-                        <Button
-                            onClick={handleGoogleSignIn}
-                            variant="contained"
-                        >
-                            Google Sign In
-                        </Button>
                     </Grid>
                 </Grid>
             </Container>

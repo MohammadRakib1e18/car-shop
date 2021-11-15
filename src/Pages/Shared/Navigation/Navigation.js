@@ -51,7 +51,7 @@ const Navigation = () => {
                     </Link>
                     {user?.email ? (
                         <Box>
-                            <NavLink
+                            {/* <NavLink
                                 style={{
                                     textDecoration: "none",
                                     color: "white",
@@ -59,7 +59,7 @@ const Navigation = () => {
                                 to="/dashboard"
                             >
                                 <Button color="inherit">Dashboard</Button>
-                            </NavLink>
+                            </NavLink> */}
                             <Button onClick={logout} color="inherit">
                                 Logout
                             </Button>
