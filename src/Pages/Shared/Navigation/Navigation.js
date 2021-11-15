@@ -29,9 +29,24 @@ const Navigation = () => {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        Car Shop
+                        Modern Car Shop
                     </Typography>
-                    <Link to="/products">
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color:'yellowgreen',
+                        }}
+                        to="/home"
+                    >
+                        <Button color="inherit">Home</Button>
+                    </Link>
+                    <Link
+                        style={{
+                            textDecoration: "none",
+                            color:'yellowgreen',
+                        }}
+                        to="/products"
+                    >
                         <Button color="inherit">Our Cars</Button>
                     </Link>
                     {/* {user?.email ? (

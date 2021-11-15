@@ -3,6 +3,7 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Footer from '../../Footer/Footer';
 import Products from '../Products/Products/Products';
+import Comments from '../Comments/Comments';
 
 const Home = () => {
     return (
@@ -11,6 +12,8 @@ const Home = () => {
             <Banner></Banner>
             <h1 className="mt-4"><span className="text-primary">Featured</span> <span className="text-success">Cars</span></h1>
             <Products></Products>
+            <hr />
+            <Comments></Comments>
             <Footer></Footer>
         </div>
     );

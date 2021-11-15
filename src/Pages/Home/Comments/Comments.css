@@ -1,0 +1,13 @@
+.comments-container h1{
+    color: rgba(40, 63, 138, 0.534);
+}
+.comments{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.single-comment{
+    margin: 10px;
+}
+.left-comment{
+    border-right: 1px solid darkgrey;
+}
