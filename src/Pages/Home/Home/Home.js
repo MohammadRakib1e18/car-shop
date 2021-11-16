@@ -11,7 +11,7 @@ const Home = () => {
             <Navigation></Navigation>
             <Banner></Banner>
             <h1 className="mt-4"><span className="text-primary">Featured</span> <span className="text-success">Cars</span></h1>
-            <Products></Products>
+            <Products carCounter={6}></Products>
             <hr />
             <Comments></Comments>
             <Footer></Footer>

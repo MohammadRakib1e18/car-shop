@@ -34,6 +34,8 @@ const Register = () => {
             loginData.email,
             loginData.password,
             loginData.name,
+            loginData.phone,
+            loginData.district,
             history
         );
         e.preventDefault();
@@ -50,13 +52,13 @@ const Register = () => {
                         {!isLoading && (
                             <form onSubmit={handleLoginSubmit}>
                                 <TextField
-                                sx={{ width: "75%", m: 1 }}
-                                id="standard-basic"
-                                label="Your Name"
-                                name="name"
-                                onBlur={handleOnBlur}
-                                variant="standard"
-                            />
+                                    sx={{ width: "75%", m: 1 }}
+                                    id="standard-basic"
+                                    label="Your Name"
+                                    name="name"
+                                    onBlur={handleOnBlur}
+                                    variant="standard"
+                                />
                                 <TextField
                                     sx={{ width: "75%", m: 1 }}
                                     id="standard-basic"
@@ -81,6 +83,22 @@ const Register = () => {
                                     label="ReType Your Password"
                                     type="password"
                                     name="password2"
+                                    onBlur={handleOnBlur}
+                                    variant="standard"
+                                />
+                                <TextField
+                                    sx={{ width: "75%", m: 1 }}
+                                    id="standard-basic"
+                                    label="District"
+                                    name="district"
+                                    onBlur={handleOnBlur}
+                                    variant="standard"
+                                />
+                                <TextField
+                                    sx={{ width: "75%", m: 1 }}
+                                    id="standard-basic"
+                                    label="Phone Number"
+                                    name="phone"
                                     onBlur={handleOnBlur}
                                     variant="standard"
                                 />

@@ -13,14 +13,18 @@ const Product = (props) => {
                 <h4>{name}</h4>
                 <h5>Price: {price}</h5>
                 <p>{about}</p>
-                {/* to={`/booking/${index}` */}
-                <Link style={{textDecoration:"none"}} to='/purchase'>
-                    <div className="d-grid gap-2 col-6 mx-auto">
-                        <button className="btn btn-warning text-decoration-none" type="button">
-                            Purchase Now
-                        </button>
-                    </div>
-                </Link>
+                {
+                    <Link style={{textDecoration:"none"}} to={`/purchase/${index}`}>
+                        <div className="d-grid gap-2 col-6 mx-auto">
+                            <button
+                                className="btn btn-warning text-decoration-none"
+                                type="button"
+                            >
+                                Purchase Now {index}
+                            </button>
+                        </div>
+                    </Link>
+                }
             </div>
         </div>
     );
