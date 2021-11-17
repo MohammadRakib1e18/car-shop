@@ -8,20 +8,18 @@ initializeFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [tempUser, setTempUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
 
-    const registerUser = (email, password, name, phone, district, history) => {
+    const registerUser = (email, password, name, phone, district, history, location) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
                 const newUser = { email, displayName: name, phoneNumber: phone, district: district };
                 setUser(newUser);
-                setTempUser(newUser);
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     email: email,
@@ -79,7 +77,6 @@ const useFirebase = () => {
 
     return {
         user,
-        tempUser,
         isLoading,
         authError,
         registerUser,

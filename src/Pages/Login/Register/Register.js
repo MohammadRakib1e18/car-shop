@@ -36,7 +36,8 @@ const Register = () => {
             loginData.name,
             loginData.phone,
             loginData.district,
-            history
+            history,
+            location
         );
         e.preventDefault();
     };

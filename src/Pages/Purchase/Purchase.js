@@ -1,4 +1,4 @@
-import { CircularProgress, Grid } from "@mui/material";
+import { Alert, CircularProgress, Grid } from "@mui/material";
 import { Container, Typography, TextField, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -27,9 +27,13 @@ const Purchase = () => {
     }
     // destructuring
     const { picture, price, name } = selectedProduct;
-    // console.log(selectedProduct);
+
+
     placeOrder['name']=user.displayName;
     placeOrder['email']=user.email;
+    placeOrder['carName']=name;
+    placeOrder['price'] = price;
+
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -38,13 +42,29 @@ const Purchase = () => {
         setPlaceOrder(newPlaceOrder);
     };
     const handleOrder = (e) => {
-        console.log(placeOrder);
+        fetch('http://localhost:5000/order', {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(placeOrder)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data.result);
+            if(data.result.insertedId){
+                console.log('rakib');
+                alert('Order Booked Successfully!');
+                // <Alert severity="success">Order Booked Successfully!</Alert>
+            }
+        })
+
         e.preventDefault();
     };
 
     return (
         <Container sx={{ mt: 2 }}>
-            <h2 className="text-info">Purchase Your Favourite Car!</h2>
+            <h2 className="text-info">Purchase Your Car |<span className="text-warning">| {name}</span></h2>
             <hr style={{ paddingBottom: "2px", color: "chocolate" }} />
             <Grid container spacing={6}>
                 <Grid item xs={6} md={6} sx={{ mt: 1 }}>
@@ -59,7 +79,6 @@ const Purchase = () => {
                                 label="Your Name"
                                 defaultValue={user.displayName}
                                 name="name"
-                                // onBlur={handleOnBlur}
                                 variant="standard"
                             />
                             <TextField
@@ -69,7 +88,6 @@ const Purchase = () => {
                                 defaultValue={user.email}
                                 name="email"
                                 type="email"
-                                // onBlur={handleOnBlur}
                                 variant="standard"
                             />
                             <TextField
