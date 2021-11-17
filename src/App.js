@@ -11,6 +11,7 @@ import Purchase from "./Pages/Purchase/Purchase";
 import Review from "./Pages/Dashboard/GeneralUser/Review";
 import MyOrders from "./Pages/Dashboard/GeneralUser/MyOrders";
 import PayMent from "./Pages/Dashboard/GeneralUser/PayMent";
+import MakeAdmin from "./Pages/Dashboard/AdminUser/MakeAdmin";
 
 function App() {
     return (
@@ -41,6 +42,9 @@ function App() {
                     </Route>
                     <Route exact path='/dashboardHome/myOrder'>
                         <MyOrders/>
+                    </Route>
+                    <Route exact path='/dashboardHome/makeAdmin'>
+                        <MakeAdmin/>
                     </Route>
                     <PrivateRoute exact path="/dashboardHome">
                         <DashboardHome/>

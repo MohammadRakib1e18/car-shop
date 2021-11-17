@@ -38,6 +38,9 @@ function Dashboard(props) {
             <Link to='/dashboardHome/myOrder'>
                 <Button color="inherit">My Orders</Button>
             </Link>
+            <Link to='/dashboardHome/makeAdmin'>
+                <Button color="inherit">Make Admin</Button>
+            </Link>
         </div>
     );
 
