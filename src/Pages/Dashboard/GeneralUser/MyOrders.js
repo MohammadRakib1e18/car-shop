@@ -22,16 +22,16 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h2>Total Orders: {orders.length}</h2>
+            <h2 className="my-4"><span className="text-info">Total Orders:</span> <span className="text-danger">{orders.length}</span></h2>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Car</TableCell>
-                            <TableCell align="right">Name</TableCell>
-                            <TableCell align="right">Client</TableCell>
-                            <TableCell align="right">E-mail</TableCell>
-                            <TableCell align="right">Price</TableCell>
+                            <TableCell sx={{fontSize: '25px'}}>Car</TableCell>
+                            <TableCell align="right" sx={{fontSize: '25px'}}>Name</TableCell>
+                            <TableCell align="right" sx={{fontSize: '25px'}}>Client</TableCell>
+                            <TableCell align="right" sx={{fontSize: '25px'}}>E-mail</TableCell>
+                            <TableCell align="right" sx={{fontSize: '25px'}}>Price</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -57,7 +57,7 @@ const MyOrders = () => {
                                     {order.email}
                                 </TableCell>
                                 <TableCell align="right">
-                                    {orders.price}
+                                    ${order.price}
                                 </TableCell>
                             </TableRow>
                         ))}
