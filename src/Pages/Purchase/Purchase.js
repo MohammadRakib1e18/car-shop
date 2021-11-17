@@ -27,6 +27,9 @@ const Purchase = () => {
     }
     // destructuring
     const { picture, price, name } = selectedProduct;
+    // console.log(selectedProduct);
+    placeOrder['name']=user.displayName;
+    placeOrder['email']=user.email;
     const handleOnBlur = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -44,103 +47,46 @@ const Purchase = () => {
             <h2 className="text-info">Purchase Your Favourite Car!</h2>
             <hr style={{ paddingBottom: "2px", color: "chocolate" }} />
             <Grid container spacing={6}>
-                <Grid item xs={6} md={6} sx={{ mt: 4 }}>
+                <Grid item xs={6} md={6} sx={{ mt: 1 }}>
                     <img style={{ width: "90%" }} src={picture} alt={name} />
                 </Grid>
                 <Grid item xs={6} md={6}>
                     {!isLoading && (
                         <form onSubmit={handleOrder}>
                             <TextField
-                                sx={{ width: "75%" }}
+                                sx={{ width: "75%", m: 1 }}
                                 id="standard-basic"
                                 label="Your Name"
                                 defaultValue={user.displayName}
                                 name="name"
-                                onBlur={handleOnBlur}
+                                // onBlur={handleOnBlur}
                                 variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            Buyer Name: 
-                                        </InputAdornment>
-                                    ),
-                                }}
                             />
                             <TextField
-                                sx={{ width: "75%", m: 1, color: "red" }}
+                                sx={{ width: "75%", m: 1 }}
                                 id="standard-basic"
+                                label="Your Email"
                                 defaultValue={user.email}
                                 name="email"
                                 type="email"
-                                onBlur={handleOnBlur}
+                                // onBlur={handleOnBlur}
                                 variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            E-mail: 
-                                        </InputAdornment>
-                                    ),
-                                }}
-                            />
-                            <TextField
-                                sx={{ width: "75%", m: 1, color: "red" }}
-                                id="standard-basic"
-                                defaultValue={name}
-                                name="name"
-                                onBlur={handleOnBlur}
-                                variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            Car Name: 
-                                        </InputAdornment>
-                                    ),
-                                }}
-                            />
-                            <TextField
-                                sx={{ width: "75%", m: 1, color: "red" }}
-                                id="standard-basic"
-                                defaultValue={price}
-                                name="price"
-                                onBlur={handleOnBlur}
-                                variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            Price: 
-                                        </InputAdornment>
-                                    ),
-                                }}
                             />
                             <TextField
                                 sx={{ width: "75%", m: 1 }}
                                 id="standard-basic"
+                                label="Your district"
                                 name="district"
-                                defaultValue=""
                                 onBlur={handleOnBlur}
                                 variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            District: 
-                                        </InputAdornment>
-                                    ),
-                                }}
                             />
                             <TextField
                                 sx={{ width: "75%", m: 1 }}
                                 id="standard-basic"
+                                label="Your phone"
                                 name="phone"
-                                defaultValue=""
                                 onBlur={handleOnBlur}
                                 variant="standard"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            Phone: 
-                                        </InputAdornment>
-                                    ),
-                                }}
                             />
 
                             <Button
