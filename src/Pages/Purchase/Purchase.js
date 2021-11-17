@@ -32,6 +32,7 @@ const Purchase = () => {
     placeOrder['email']=user.email;
     placeOrder['carName']=name;
     placeOrder['price'] = price;
+    placeOrder['picture'] = picture;
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -41,7 +42,7 @@ const Purchase = () => {
         setPlaceOrder(newPlaceOrder);
     };
     const handleOrder = (e) => {
-        fetch('http://localhost:5000/order', {
+        fetch('https://intense-temple-81535.herokuapp.com/order', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'

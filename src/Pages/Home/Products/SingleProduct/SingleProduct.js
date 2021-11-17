@@ -20,7 +20,7 @@ const Product = (props) => {
                                 className="btn btn-warning text-decoration-none"
                                 type="button"
                             >
-                                Purchase Now {index}
+                                Purchase Now
                             </button>
                         </div>
                     </Link>
