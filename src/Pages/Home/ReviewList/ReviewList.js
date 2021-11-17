@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Review = () => {
     const [review, setReview] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/review`;
+        const url = `https://intense-temple-81535.herokuapp.com/review`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setReview(data));
