@@ -18,7 +18,6 @@ const MyOrders = () => {
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, []);
-    console.log(orders);
 
     return (
         <div>

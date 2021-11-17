@@ -53,7 +53,6 @@ const Purchase = () => {
         .then(data=>{
             console.log(data.result);
             if(data.result.insertedId){
-                console.log('rakib');
                 alert('Order Booked Successfully!');
                 // <Alert severity="success">Order Booked Successfully!</Alert>
             }
