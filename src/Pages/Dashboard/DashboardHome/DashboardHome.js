@@ -6,54 +6,38 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Products from "../../Home/Products/Products/Products";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [date, setDate] = React.useState(new Date());
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-
     const drawer = (
         <div>
             <Toolbar />
             <Divider />
-            <Link to="/home">
-                <Button color="inherit">Home</Button>
+            <Link to="/home">Home</Link>
+            <br />
+            <Link to='/dashboardHome/payment'>
+                <Button color="inherit">PayMent</Button>
             </Link>
-            <br/>
-            <Link to="/products">
-                <Button color="inherit">Our Cars</Button>
+            <br />
+            <Link to='/dashboardHome/review'>
+                <Button color="inherit">Review</Button>
             </Link>
-            <List>
-                {["Inbox", "Starred", "Send email", "Drafts"].map(
-                    (text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    )
-                )}
-            </List>
+            <br />
+            <Link to='/dashboardHome/myOrder'>
+                <Button color="inherit">My Orders</Button>
+            </Link>
         </div>
     );
 
@@ -129,19 +113,7 @@ function Dashboard(props) {
                     p: 3,
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                 }}
-            >
-                <Toolbar />
-                <Typography paragraph>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={12} md={12}>
-                            <Products />
-                        </Grid>
-                        {/* <Grid item xs={12} sm={7}>
-                            <Appointments date={date}></Appointments>
-                        </Grid> */}
-                    </Grid>
-                </Typography>
-            </Box>
+            ></Box>
         </Box>
     );
 }

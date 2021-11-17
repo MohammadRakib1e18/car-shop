@@ -1,9 +1,8 @@
-import { Alert, CircularProgress, Grid } from "@mui/material";
-import { Container, Typography, TextField, Button } from "@mui/material";
+import { Grid } from "@mui/material";
+import { Container, TextField, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import InputAdornment from "@mui/material/InputAdornment";
 
 const Purchase = () => {
     const { id } = useParams();
@@ -80,6 +79,7 @@ const Purchase = () => {
                                 defaultValue={user.displayName}
                                 name="name"
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 sx={{ width: "75%", m: 1 }}
@@ -89,6 +89,7 @@ const Purchase = () => {
                                 name="email"
                                 type="email"
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 sx={{ width: "75%", m: 1 }}
@@ -97,6 +98,7 @@ const Purchase = () => {
                                 name="district"
                                 onBlur={handleOnBlur}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 sx={{ width: "75%", m: 1 }}
@@ -105,6 +107,7 @@ const Purchase = () => {
                                 name="phone"
                                 onBlur={handleOnBlur}
                                 variant="standard"
+                                required
                             />
 
                             <Button
@@ -114,6 +117,10 @@ const Purchase = () => {
                             >
                                 Place Order
                             </Button>
+                            <br/>
+                            <Link to='/home' className="btn">
+                                Home
+                            </Link>
                         </form>
                     )}
                 </Grid>

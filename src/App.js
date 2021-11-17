@@ -5,9 +5,12 @@ import OurCars from "./Pages/OurCars/OurCars/OurCars";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
-import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Purchase from "./Pages/Purchase/Purchase";
+import Review from "./Pages/Dashboard/GeneralUser/Review";
+import MyOrders from "./Pages/Dashboard/GeneralUser/MyOrders";
+import PayMent from "./Pages/Dashboard/GeneralUser/PayMent";
 
 function App() {
     return (
@@ -30,8 +33,17 @@ function App() {
                     <Route exact path="/register">
                         <Register />
                     </Route>
-                    <PrivateRoute exact path="/dashboard">
-                        <Dashboard />
+                    <Route exact path='/dashboardHome/payment'>
+                        <PayMent/>
+                    </Route>
+                    <Route exact path='/dashboardHome/review'>
+                        <Review/>
+                    </Route>
+                    <Route exact path='/dashboardHome/myOrder'>
+                        <MyOrders/>
+                    </Route>
+                    <PrivateRoute exact path="/dashboardHome">
+                        <DashboardHome/>
                     </PrivateRoute>
                     <PrivateRoute exact path="/purchase/:id">
                         <Purchase></Purchase>

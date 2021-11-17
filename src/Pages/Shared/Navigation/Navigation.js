@@ -67,7 +67,7 @@ const Navigation = () => {
                                     textDecoration: "none",
                                     color: "white",
                                 }}
-                                to="/dashboard"
+                                to="/dashboardHome"
                             >
                                 <Button color="inherit">Dashboard</Button>
                             </NavLink>
