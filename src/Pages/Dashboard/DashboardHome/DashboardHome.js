@@ -11,13 +11,15 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
+    const { user, isAdmin } = useAuth();
+    console.log("isAdmin: ", isAdmin);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -27,20 +29,36 @@ function Dashboard(props) {
             <Divider />
             <Link to="/home">Home</Link>
             <br />
-            <Link to='/dashboardHome/payment'>
-                <Button color="inherit">PayMent</Button>
-            </Link>
-            <br />
-            <Link to='/dashboardHome/review'>
-                <Button color="inherit">Review</Button>
-            </Link>
-            <br />
-            <Link to='/dashboardHome/myOrder'>
-                <Button color="inherit">My Orders</Button>
-            </Link>
-            <Link to='/dashboardHome/makeAdmin'>
-                <Button color="inherit">Make Admin</Button>
-            </Link>
+            {isAdmin.admin ? (
+                <Box>
+                    <Link to="/dashboardHome/makeAdmin">
+                        <Button color="inherit">Make Admin</Button>
+                    </Link>
+                    <Link to="/dashboardHome/addProduct">
+                        <Button color="inherit">Add Product</Button>
+                    </Link>
+                    <Link to="/dashboardHome/manageOrders">
+                        <Button color="inherit">Manage Orders</Button>
+                    </Link>
+                    <Link to="/dashboardHome/manageProduct">
+                        <Button color="inherit">Manage Product</Button>
+                    </Link>
+                </Box>
+            ) : (
+                <Box>
+                    <Link to="/dashboardHome/payment">
+                        <Button color="inherit">PayMent</Button>
+                    </Link>
+                    <br />
+                    <Link to="/dashboardHome/review">
+                        <Button color="inherit">Review</Button>
+                    </Link>
+                    <br />
+                    <Link to="/dashboardHome/myOrder">
+                        <Button color="inherit">My Orders</Button>
+                    </Link>
+                </Box>
+            )}
         </div>
     );
 
