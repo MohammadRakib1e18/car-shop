@@ -20,7 +20,6 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { user, isAdmin } = useAuth();
-    console.log("isAdmin: ", isAdmin);
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };

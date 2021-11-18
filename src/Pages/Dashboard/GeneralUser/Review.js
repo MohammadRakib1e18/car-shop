@@ -23,9 +23,7 @@ const Review = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data.result);
             if(data.result.insertedId){
-                console.log('rakib');
                 alert('Review Submitted Successfully!');
                 // <Alert severity="success">Order Booked Successfully!</Alert>
             }

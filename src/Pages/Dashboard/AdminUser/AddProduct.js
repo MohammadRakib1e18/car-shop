@@ -13,7 +13,7 @@ const AddProduct = () => {
         setProduct(newProduct);
     };
     const submitReview = (e) => {
-        fetch('http://localhost:5000/productAdded', {
+        fetch('https://intense-temple-81535.herokuapp.com/productAdded', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -22,7 +22,6 @@ const AddProduct = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data.result);
             if(data.result.insertedId){
                 alert('Product Added Successfully!');
             }

@@ -49,7 +49,6 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setAuthError(error.message);
-                console.log(error);
             })
             .finally(() => setIsLoading(false));
     };
@@ -70,7 +69,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch("http://localhost:5000/users", {
+        fetch("https://intense-temple-81535.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -93,7 +92,7 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://intense-temple-81535.herokuapp.com/users/${user.email}`)
             .then((res) => res.json())
             .then((data) => setIsAdmin(data));
     }, [user.email]);

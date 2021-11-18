@@ -15,20 +15,17 @@ const Purchase = () => {
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);
-    // console.log(typeof products);
 
     let selectedProduct = {};
     let len = products.length;
-    console.log("length: ", len);
 
     for (let i = 0; i < len; i++) {
-        if (parseInt(products[i]._id) === parseInt(id)) {
+        if (products[i]._id === id) {
             selectedProduct = products[i];
         }
     }
     // destructuring
     const { picture, price, name } = selectedProduct;
-    console.log(selectedProduct);
 
     placeOrder["name"] = user.displayName;
     placeOrder["email"] = user.email;
@@ -53,7 +50,6 @@ const Purchase = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.result);
                 if (data.result.insertedId) {
                     alert("Order Booked Successfully!");
                     // <Alert severity="success">Order Booked Successfully!</Alert>
@@ -62,7 +58,6 @@ const Purchase = () => {
 
         e.preventDefault();
     };
-    console.log(picture);
 
     return (
         <Container sx={{ mt: 2 }}>

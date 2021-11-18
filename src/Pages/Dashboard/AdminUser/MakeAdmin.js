@@ -13,9 +13,8 @@ const MakeAdmin = () => {
     }
     const adminSubmit = (e) => {
         e.preventDefault();
-        console.log(email);
         const user = { email };
-        fetch("http://localhost:5000/users/admin", {
+        fetch("https://intense-temple-81535.herokuapp.com/admin", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
