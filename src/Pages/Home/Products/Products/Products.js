@@ -17,7 +17,7 @@ const Products = ({carCounter}) => {
             <div className="mt-4 products">
                 {homeProducts.map((product) => (
                     <SingleProduct
-                        key={product.index}
+                        key={product._id}
                         product={product}
                     ></SingleProduct>
                 ))}
@@ -29,7 +29,7 @@ const Products = ({carCounter}) => {
         <div className="mt-4 products">
             {products.map((product) => (
                 <SingleProduct
-                    key={product.index}
+                    key={product._id}
                     product={product}
                 ></SingleProduct>
             ))}

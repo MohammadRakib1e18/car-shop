@@ -12,7 +12,7 @@ import useAuth from "./../../../hooks/useAuth";
 const Navigation = () => {
     const { user, logout } = useAuth();
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box clssName="container-fluid" sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -39,6 +39,7 @@ const Navigation = () => {
                         variant="h4"
                         component="div"
                         sx={{ flexGrow: 1 }}
+                        className="header"
                     >
                         Modern Car Shop
                     </Typography>

@@ -15,24 +15,26 @@ const Purchase = () => {
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);
+    // console.log(typeof products);
 
     let selectedProduct = {};
     let len = products.length;
+    console.log("length: ", len);
 
     for (let i = 0; i < len; i++) {
-        if (products[i].index === parseInt(id)) {
+        if (parseInt(products[i]._id) === parseInt(id)) {
             selectedProduct = products[i];
         }
     }
     // destructuring
     const { picture, price, name } = selectedProduct;
+    console.log(selectedProduct);
 
-
-    placeOrder['name']=user.displayName;
-    placeOrder['email']=user.email;
-    placeOrder['carName']=name;
-    placeOrder['price'] = price;
-    placeOrder['picture'] = picture;
+    placeOrder["name"] = user.displayName;
+    placeOrder["email"] = user.email;
+    placeOrder["carName"] = name;
+    placeOrder["price"] = price;
+    placeOrder["picture"] = picture;
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -42,28 +44,32 @@ const Purchase = () => {
         setPlaceOrder(newPlaceOrder);
     };
     const handleOrder = (e) => {
-        fetch('https://intense-temple-81535.herokuapp.com/order', {
-            method: 'POST', 
+        fetch("https://intense-temple-81535.herokuapp.com/order", {
+            method: "POST",
             headers: {
-                'content-type': 'application/json'
+                "content-type": "application/json",
             },
-            body: JSON.stringify(placeOrder)
+            body: JSON.stringify(placeOrder),
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data.result);
-            if(data.result.insertedId){
-                alert('Order Booked Successfully!');
-                // <Alert severity="success">Order Booked Successfully!</Alert>
-            }
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.result);
+                if (data.result.insertedId) {
+                    alert("Order Booked Successfully!");
+                    // <Alert severity="success">Order Booked Successfully!</Alert>
+                }
+            });
 
         e.preventDefault();
     };
+    console.log(picture);
 
     return (
         <Container sx={{ mt: 2 }}>
-            <h2 className="text-info">Purchase Your Car |<span className="text-warning">| {name}</span></h2>
+            <h2 className="text-info">
+                Purchase Your Car |
+                <span className="text-warning">| {name}</span>
+            </h2>
             <hr style={{ paddingBottom: "2px", color: "chocolate" }} />
             <Grid container spacing={6}>
                 <Grid item xs={6} md={6} sx={{ mt: 1 }}>
@@ -117,8 +123,8 @@ const Purchase = () => {
                             >
                                 Place Order
                             </Button>
-                            <br/>
-                            <Link to='/home' className="btn">
+                            <br />
+                            <Link to="/home" className="btn">
                                 Home
                             </Link>
                         </form>

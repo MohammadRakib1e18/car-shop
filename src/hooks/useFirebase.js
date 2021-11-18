@@ -24,8 +24,6 @@ const useFirebase = () => {
         email,
         password,
         name,
-        phone,
-        district,
         history,
         location
     ) => {
@@ -36,8 +34,6 @@ const useFirebase = () => {
                 const newUser = {
                     email,
                     displayName: name,
-                    phoneNumber: phone,
-                    district: district,
                 };
                 setUser(newUser);
                 // save the user to database.user
@@ -46,8 +42,6 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     email: email,
                     displayName: name,
-                    district: district,
-                    phoneNumber: phone,
                 })
                     .then(() => {})
                     .catch((error) => {});

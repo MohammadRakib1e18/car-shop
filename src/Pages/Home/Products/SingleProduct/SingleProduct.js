@@ -4,7 +4,7 @@ import "./SingleProduct.css";
 
 const Product = (props) => {
     // destructuring
-    const { index, picture, about, price, name } = props.product;
+    const { _id, picture, about, price, name } = props.product;
 
     return (
         <div className="product">
@@ -14,7 +14,7 @@ const Product = (props) => {
                 <h5>Price: {price}</h5>
                 <p>{about}</p>
                 {
-                    <Link style={{textDecoration:"none"}} to={`/purchase/${index}`}>
+                    <Link style={{textDecoration:"none"}} to={`/purchase/${_id}`}>
                         <div className="d-grid gap-2 col-6 mx-auto">
                             <button
                                 className="btn btn-warning text-decoration-none"

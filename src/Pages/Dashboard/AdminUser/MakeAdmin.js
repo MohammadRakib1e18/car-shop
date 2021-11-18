@@ -5,9 +5,12 @@ const MakeAdmin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleOnBlur = (e) => {
+    const handleEmailOnBlur = (e) => {
         setEmail(e.target.value);
     };
+    const handlePassOnBlur = (e)=>{
+        setPassword(e.target.value);
+    }
     const adminSubmit = (e) => {
         e.preventDefault();
         console.log(email);
@@ -38,13 +41,24 @@ const MakeAdmin = () => {
             <form onSubmit={adminSubmit}>
                 <TextField
                     label="Email"
+                    sx={{width: '30%'}}
                     type="email"
-                    onBlur={handleOnBlur}
+                    onBlur={handleEmailOnBlur}
                     variant="standard"
                     required
                 />
+                <br/>
+                <TextField
+                    label="password"
+                    sx={{width: '30%', marginTop: '10px'}}
+                    type="password"
+                    onBlur={handlePassOnBlur}
+                    variant="standard"
+                    required
+                />
+                <br/>
                 <Button
-                    sx={{ marginTop: "10px", width: "10%" }}
+                    sx={{ marginTop: "10px", width: "20%" }}
                     type="submit"
                     variant="contained"
                 >

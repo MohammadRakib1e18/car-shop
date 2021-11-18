@@ -1,23 +1,23 @@
 import React from "react";
 
 const SingleReview = ({ singleReview }) => {
-    let { name, comment, rating } = singleReview;
+    let {name, comment, rating } = singleReview;
     rating=parseInt(rating);
     return (
         <div>
             <div className="my-4">
-                <h2>
+                <h3>
                     <i className="fas fa-user-edit"></i>{" "}
                     <span className="text-secondary">{name}</span>
-                </h2>
-                <h4 className="text-danger mb-3">
+                </h3>
+                <h5 className="text-danger mb-3" style={{marginTop:'-20px'}}>
                     <i className="far fa-comment text-dark"></i> {comment}
-                </h4>
+                </h5>
                 {[...Array(rating)].map((rate) => (
-                    <i class="fa fa-star text-warning fs-5"></i>
+                    <i className="fa fa-star text-warning fs-6">&nbsp;</i>
                 ))}
                 {[...Array(5 - rating)].map((rate) => (
-                    <i class="far fa-star fs-5"></i>
+                    <i className="far fa-star fs-6">&nbsp;</i>
                 ))}
             </div>
             <hr
